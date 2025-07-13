@@ -6,6 +6,31 @@
 
 At its core, "Future Vision" will take a user's date, time, and place of birth to generate a precise astrological natal chart. This foundational data, a snapshot of the cosmos at the moment of birth, will then be translated into a series of rich, symbolic prompts. These prompts will be fed into advanced AI video generation models, such as Google's Veo 2 or the anticipated Veo 3, to craft a unique video that visually represents the user's astrological profile and potential life path. The result will be a "Future Vision" – a cinematic and metaphorical exploration of one's self, not as a deterministic prediction, but as a source of inspiration and self-discovery.
 
+
+```mermaid
+graph TD
+    A[Start] --> B{"User provides data<br/>- Name, DOB, Time, Location<br/>- Optional: User Image"};
+    B --> C["Process data with Astrology Library<br/>(e.g., kerykeion)"];
+    C --> D["Generate Structured Natal Chart Data<br/>(JSON format)"];
+    D --> E["Send Natal Chart Data to LLM<br/>(Groq API with strong updated model)"];
+    E --> F["LLM translates symbolic astrology<br/>into rich, cinematic text prompts"];
+    F --> G{"Receive generated<br/>video prompts"};
+    G --> H["Send Prompts (& Optional User Image)<br/>to AI Video Model<br/>(e.g., vrgamedevgirl84/Wan14BT2VFusioniX)"];
+    H --> I["AI model processes prompts<br/>and renders video frames"];
+    I --> J["Compile frames into a single<br/>video file (e.g., MP4)"];
+    J --> K["Output: Personalized<br/>'Future Vision' Video"];
+    K --> L[End];
+
+    %% Styling
+    classDef startend fill:#00b894,stroke:#0984e3,stroke-width:2px,color:#ffffff;
+    classDef process fill:#74b9ff,stroke:#0984e3,stroke-width:2px,color:#000000;
+    classDef io fill:#ffeaa7,stroke:#fdcb6e,stroke-width:2px,color:#000000;
+
+    class A,L startend;
+    class C,D,E,F,H,I,J process;
+    class B,G,K io;
+```
+
 ### A Seamless Workflow: From Celestial Data to Cinematic Vision
 
 The "Future Vision" project will be built upon a smooth and intuitive workflow, designed to transform complex astrological data into a compelling and accessible visual experience.
